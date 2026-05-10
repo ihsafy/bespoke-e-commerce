@@ -1,0 +1,169 @@
+/* Import Google Font - Poppins for a modern, geometric, and premium feel */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Global Variables for RORA Luxe Theme */
+:root {
+    --primary-color: #121212; /* Deep charcoal/black */
+    --secondary-color: #c5a880; /* Luxe Gold accent */
+    --background-light: #f9f9fa; /* Soft off-white for backgrounds */
+    --text-main: #333333;
+    --text-muted: #777777;
+    --white: #ffffff;
+    --border-color: #eeeeee;
+    --transition-speed: 0.3s;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --hover-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Base Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--background-light);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* Layout Utilities */
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Form Elements */
+input, select, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    outline: none;
+    transition: border-color var(--transition-speed) ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--secondary-color);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    text-align: center;
+    transition: all var(--transition-speed) ease;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Reusable Product Card Styling (For Homepage & Shop) */
+.product-card {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all var(--transition-speed) ease;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.product-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-title {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+/* Simple Grid System */
+.grid {
+    display: grid;
+    gap: 20px;
+}
+
+.grid-cols-4 {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .grid-cols-4 {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
